@@ -2,7 +2,8 @@ import os
 import django
 import random
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'setup.settings')
+# Defina o módulo de configurações correto
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'app.settings')
 django.setup()
 
 from escola.models import Curso
