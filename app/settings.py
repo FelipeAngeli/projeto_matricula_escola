@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'escola',
     'rest_framework',
     'django_filters',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -127,12 +128,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configuração do rest_framework
 REST_FRAMEWORK = {
-    #autenticação
+    # Permissões
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.DjangoModelPermissions',  
     ],
+    # Autenticação
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissions',
+        'rest_framework.authentication.SessionAuthentication', 
+        # 'rest_framework.authentication.BasicAuthentication',    
     ],
 
     #paginação
