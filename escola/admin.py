@@ -9,7 +9,6 @@ class Estudantes(admin.ModelAdmin):
     search_fields = ('nome', 'cpf',)
     ordering = ('nome',)
 
-
 admin.site.register(Estudante, Estudantes)
 
 class Cursos(admin.ModelAdmin):
